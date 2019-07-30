@@ -1,0 +1,21 @@
+{include file="public/header"}
+<div class="banner"><img src="{$banner_pc.src}" alt="关于我们" /></div>
+<div class="mbanner"><img src="{$banner_m.src}" alt="关于我们" /></div>
+{$content}
+{include file="public/footer"}  
+<script type="text/javascript">
+    $(function () {
+        $("#flexslider2").flexslider({
+            animation: "slide",
+            controlNav: false,
+            directionNav: true,
+            touch: true
+        });
+        $("#flexslider3").flexslider({
+            animation: "slide",
+            controlNav: false,
+            directionNav: true,
+            touch: true
+        });
+    });
+</script>

@@ -1,0 +1,203 @@
+{include file="public/header"}
+<link href="__INDEX__/css/flexslider.css" rel="stylesheet" />
+<link href="__INDEX__/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<div class="itopabox pc_show">
+    <div class="itopa">
+        <div class="banner">
+            <div id="flexslider" class="flexslider">
+                <ul class="slides">
+                    {volist name="pc_slides" id="slide"}
+                    <li><img src="{$slide.src}" alt="{$slide.title}" title="{$slide.title}"/></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="itopabox mobile_show">
+    <div class="itopa">
+        <div class="banner_m">
+            <div id="flexslider2" class="flexslider">
+                <ul class="slides">
+                    {volist name="mobile_slides" id="slide"}
+                        <li><img src="{$slide.src}" alt="{$slide.title}"  title="{$slide.title}"/></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainer">
+    <div class="imain4" style="padding:0;">
+        <div class="itit">{<span><b>用石力，造就独特！</b></span>}</div>
+        <div class="icaset icaset2 pc_show">
+            <a href="/brand_design.html" {if condition="$cur_top_cate['url_prefix'] eq 'brand_design'" }class="hover"{/if}>品牌设计 </a>
+            <a href="/it_service.html" {if condition="$cur_top_cate['url_prefix'] eq 'it_service'"}class="hover" {/if}>IT信息服务 </a>
+            <a href="/publicity_materials.html" {if condition="$cur_top_cate['url_prefix'] eq 'publicity_materials' or $cur_top_cate['url_prefix'] eq ''"}class="hover" {/if}>宣传画册 </a>
+            <a href="/space_guidance.html" {if condition="$cur_top_cate['url_prefix'] eq 'space_guidance'" }class="hover" {/if}>空间导视 </a> 
+            <a  href="/photography.html" {if condition="$cur_top_cate['url_prefix'] eq 'photography'" }class="hover"{/if}>商业摄影 </a>
+        </div> 
+        <div class="icaset icaset2 mobile_show">
+            <a href="/brand_design.html" {if condition="$cur_top_cate['url_prefix'] eq 'brand_design'" }class="hover"{/if}>品牌设计 </a>
+            <a href="/publicity_materials.html" {if  condition="$cur_top_cate['url_prefix'] eq 'publicity_materials' or $cur_top_cate['url_prefix'] eq ''"}class="hover" {/if}>宣传画册 </a>
+            <a href="/it_service.html" {if  condition="$cur_top_cate['url_prefix'] eq 'it_service'" }class="hover" {/if}>IT信息服务 </a>
+            <a  href="/space_guidance.html" {if condition="$cur_top_cate['url_prefix'] eq 'space_guidance'"}class="hover" {/if}>空间导视 </a>
+            <a href="/photography.html" {if  condition="$cur_top_cate['url_prefix'] eq 'photography'" }class="hover" {/if}>商业摄影 </a> 
+        </div> 
+        <div class="mnav mnav2">
+            {volist name="cur_second_cates" id="second_cate"}
+            <a href="/{$second_cate['url_prefix']}.html" {if condition="$second_cate['id'] eq $cur_cate_info['id']"}class="hover" {/if}>{$second_cate.catename} </a> 
+            {/volist}
+        </div> 
+        <div class="mainbox">
+            <div class="case_vbox">
+                <div class="case_vtop">
+                    <div class="t"><h1>{$case_detail.title}</h1></div>
+                    <div class="m">
+                        {if condition="$case_detail.customer_name neq ''"}
+                        <p class="p pc_show">
+                            <b><span>客户名称：</span></b>
+                            <b><span>{$case_detail.customer_name}</span></b>
+                        </p>
+                        {/if}
+                        {if condition="$case_detail.service_Items neq ''"}
+                        <p class="p pc_show">
+                            <b><span>服务项目：</span></b>
+                            <b>{$case_detail.service_Items}</b>
+                        </p><br>
+                        {/if}
+                        {if condition="$case_detail.project_brief neq ''"}
+                        <p class="p pc_show"
+                            style="margin-left:0.0000pt;text-indent:0.0000pt;background:#FFFFFF;">
+                            <b><span>项目简述：</span></b>
+                        </p>
+                        <p class="p pc_show">
+                            {$case_detail.project_brief}
+                        </p><br>
+                        {/if}
+                        {if condition="$case_detail.project_background neq ''"}<p class="p pc_show">
+                            <b><i>项目背景：</i></b>
+                        </p>
+                        <p class="p pc_show" style="background:#FFFFFF;">
+                            {$case_detail.project_background}
+                        </p>
+                        <br>
+                        {/if}
+                        {if condition="$case_detail.project_focus neq ''"}
+                        <p class="p pc_show">
+                            <b style="text-indent:0pt;">项目焦点：</b>
+                        </p>
+                        <p class="p pc_show">
+                            {$case_detail.project_focus}
+                        </p><br>
+                        {/if}
+                        {if condition="$case_detail.solution neq ''"}
+                        <p class="p pc_show">
+                            <b style="text-indent:0pt;">解决问题：</b>
+                        </p>
+                        <p class="p pc_show">
+                            {$case_detail.solution}
+                        </p>
+                        {/if}
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="case_vcon">
+                    <div class="t mobile_show">{$case_detail.title}</div>
+                    {if condition="$case_detail.project_brief neq ''"}
+                    <div class="p mobile_show">
+                        <b><span>项目简述：</span></b>
+                    </div>
+                    <div class="p mobile_show" style="margin-top:0">
+                        {$case_detail.project_brief}
+                    </div>{/if}
+                    {$case_detail.content}
+                    <div class="back">
+                        <a href="/{$cur_cate_info.url_prefix}.html">返回案例 | BACK</a>
+                    </div>
+                </div>
+            </div>
+        <div style="height:20px; background:#fff; z-index:9999; position:relative;"></div>
+        <div class="pagef" style=" z-index:9999; position:relative;">
+            <div class="pages_up"></div>
+            {if condition="$pre_id neq 0"}
+            <a href="/case/{$pre_id}.html" class="l">
+                <b>━</b> 上一个案例
+            </a>
+            {else}
+            <a class="l">
+                <b>━</b> 没有上一个了！
+            </a>
+            {/if}
+            {if condition="$next_id neq 0"}
+            <a href="/case/{$next_id}.html" class="r">
+                下一个案例 <b>+</b>
+            </a>
+            {else}
+            <a class="l">
+                <b>━</b> 没有下一个了！
+            </a>
+            {/if}
+            <div class="clear"></div>
+        </div>
+        <div style="height:50px; background:#fff; z-index:9999; position:relative;"></div>
+        </div>
+    </div>
+    <div class="imain4" style="z-index:99999;">
+        <div class="itit">{<span>同类别行业设计案例</span>}</div>
+        <div class="mainbox">
+            <div class="icase">
+                {volist name="related_cases" id="related_case" key="index"}
+                <div {if condition="$index eq 3" }class="item mr0" {else}class="item " {/if}>
+                 <a href="/case/{$related_case.id}.html" class="img">
+                    <img src="{$related_case.cover_image}" alt="{$related_case.title}" /><i></i>
+                    <div class="imgm">
+                        <p class="t"><span>客户:{$related_case.customer_name}</span></p>
+                        <p class="m">项目：{$related_case.title}</p>
+                    </div>
+                    </a>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}
+<script>
+    (function ($) {
+        $(window).load(function () {
+            $(".case_vtop .m").mCustomScrollbar({
+                scrollInertia: 150
+            });
+        });
+    })(jQuery);
+    $(function () {
+        if ($(window).width() > 630) {
+            $('body').animate({
+                scrollTop: $(window).width() * 0.286
+            }, 600);
+        } else {
+            $('body').animate({
+                scrollTop: $(window).width() * 0.52
+            }, 600);
+        }
+    });
+    $(function () {
+        $("#flexslider").flexslider({
+            animation: "fade",
+            slideshowSpeed: 5000,
+            animationSpeed: 1000,
+            directionNav: true,
+            touch: true
+        });
+    });
+    $("#flexslider2").flexslider({
+        animation: "fade",
+        slideshowSpeed: 5000,
+        animationSpeed: 1000,
+        directionNav: true,
+        touch: true
+    });
+
+</script>

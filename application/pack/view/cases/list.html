@@ -1,0 +1,132 @@
+{include file="public/header"}
+<div class="banner">
+	<img src="__PACK__/images/pack_bgpic.jpg" alt="轮播图"> 
+</div>
+<div id="mainer">
+    <div class="imain4">
+        <div class="itit">{<span>品牌包装策划与设计</span>}</div>
+        {if condition="$cur_top_cate.id eq 141"}
+        <div class="icaset icaset2 pc_show">
+            <a href="/pack/medical_apparatus.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_apparatus'" }class="hover"{/if}>医疗器械包装</a> 
+            <a href="/pack/health_products.html" {if condition="$cur_cate_info['url_prefix'] eq 'health_products'" }class="hover"{/if}>保健品包装</a> 
+            <a href="/pack/medical_products.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_products'" } class="hover"{/if}>医药品包装</a> 
+            <a href="/pack/medical_logo.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_logo'" }class="hover"{/if}>医药品牌LOGO</a> 
+            <a href="/pack/medical_propagand.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_propagand'" }class="hover"{/if}>医药宣传推广</a> 
+        </div>
+        <div class="icaset icaset2 mobile_show">
+            <a href="/pack/medical_apparatus.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_apparatus'" }class="hover"{/if}>医疗器械包装</a> 
+            <a href="/pack/medical_products.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_products'"}class="hover"{/if}>医药品包装</a>
+            <a href="/pack/health_products.html" {if condition="$cur_cate_info['url_prefix'] eq 'health_products'" }class="hover"{/if}>保健品包装</a> 
+            <a href="/pack/medical_logo.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_logo'" }class="hover"{/if}>医药品牌LOGO</a> 
+            <a href="/pack/medical_propagand.html" {if condition="$cur_cate_info['url_prefix'] eq 'medical_propagand'" }class="hover"{/if}>医药宣传推广</a> 
+        </div>
+        {else}
+        <div class="icaset icaset2 pc_show">
+            <a href="/pack/tea.html" {if condition="$cur_cate_info['url_prefix'] eq 'tea'" }class="hover"{/if}>茶叶包装</a> 
+            <a href="/pack/cosmetics.html" {if condition="$cur_cate_info['url_prefix'] eq 'cosmetics'" }class="hover"{/if}>化妆品包装</a> 
+            <a href="/pack/agriculture.html" {if condition="$cur_cate_info['url_prefix'] eq 'agriculture'"}class="hover"{/if}>农产品食品包装</a> 
+
+            <a href="/pack/wine.html" {if condition="$cur_cate_info['url_prefix'] eq 'wine'" }class="hover"{/if}>酒水包装</a> 
+            <a href="/pack/forest_food.html" {if condition="$cur_cate_info['url_prefix'] eq 'forest_food'" }class="hover"{/if}>其他产品包装</a> 
+            <a href="/pack/product_industry.html" {if condition="$cur_cate_info['url_prefix'] eq 'product_industry'" }class="hover"{/if}>产品工业设计</a>
+        </div>
+        <div class="icaset icaset2 mobile_show aaa">
+            <a href="/pack/tea.html" {if condition="$cur_cate_info['url_prefix'] eq 'tea'" }class="hover"{/if}>茶叶包装</a> 
+            <a href="/pack/agriculture.html" {if condition="$cur_cate_info['url_prefix'] eq 'agriculture'"}class="hover"{/if}>农产品食品包装</a> 
+            <a href="/pack/cosmetics.html" {if condition="$cur_cate_info['url_prefix'] eq 'cosmetics'" }class="hover"{/if}>化妆品包装</a> 
+            <a href="/pack/wine.html" {if condition="$cur_cate_info['url_prefix'] eq 'wine'" }class="hover"{/if}>酒水包装</a> 
+            <a href="/pack/forest_food.html" {if condition="$cur_cate_info['url_prefix'] eq 'forest_food'" }class="hover"{/if}>其他产品包装</a> 
+            <a href="/pack/product_industry.html" {if condition="$cur_cate_info['url_prefix'] eq 'product_industry'" }class="hover"{/if}>产品工业设计</a>
+        </div>
+        {/if}
+        <div class="mainbox">
+            <div class="icase">
+                {volist name="cases" id="case" key="index"}
+                <div class="item {if condition=" $index%3 eq 0 "}mr0{/if}">
+                    <a href="/pack/case/{$case.id}.html" class="img">
+                        <img src="{$case.cover_image}" alt="{$case.title}" title="{$case.title}"/><i></i>
+                        <div class="imgm">
+                            <p class="t"><span>客户：{$case.customer_name}</span></p>
+                            <p class="m">项目：{$case.title}</p>
+                        </div>
+                    </a>
+                    <a href="/pack/case/{$case.id}.html" class="t3">{$case.title}</a>
+                </div>
+                {/volist}
+            </div>
+            <div class="clear"></div>
+            <div class="icasef">
+                <a href="javascript:void(0)" id="next_inf" class="btn2">
+                    <img src="__PACK__/images/index/imore.png" alt="查看更多商业案例" title="查看更多商业案例">查看更多商业案例
+                </a>
+            </div>
+            <div id="more" style="display:none;">
+                <a href="/pack/{$cur_cate_info['url_prefix']}/2.html"></a>
+            </div>
+            <div class="pages spages" style="display: none;">
+                <a class="a1">39条</a>
+                <a href="/brand_case.html">第一页</a><span>1</span>
+                <a href="/brand_case/2.html">2</a>
+                <a href="/brand_case/3.html">3</a>
+                <a href="/brand_case/4.html">4</a>
+                <a href="/brand_case/2.html" class="r">下一页</a>
+                <a href="/brand_case/4.html">最后一页</a>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}
+<script type="text/javascript" src="__PACK__/js/jquery.infinitescroll.js"></script>
+<script>
+    function cc2(id_title, title_yes, title_no, id_show, show_yes, show_no, i, k) {
+        var click_div;
+        var show_div;
+        var more_div;
+        for (var j = 1; j <= k; j++) {
+            click_div = document.getElementById(id_title + j);
+            show_div = document.getElementById(id_show + j);
+            if (i == j) {
+                click_div.className = title_yes;
+                show_div.className = show_yes;
+            } else {
+                click_div.className = title_no;
+                show_div.className = show_no;
+            }
+        }
+    }
+    $(function () {
+        $(".spages").hide();
+        $('.icase .item').fadeIn();
+        var sp = 1;
+        $(".icase").infinitescroll({
+            navSelector: "#more",
+            nextSelector: "#more a",
+            itemSelector: ".icase .item",
+            animate: true,
+            debug: true, //调试的时候，可以打开
+            maxPage: 3, //加载次数
+            loading: {
+                img: "__INDEX__/images/loading_1.gif",
+                msgText: '加载中...',
+                finishedMsg: '想了解更多，请咨询设计顾问',
+                finished: function () {
+                    sp++;
+                    $("#infscr-loading").hide();
+                }
+            },
+            errorCallback: function () {
+                $(".icasef").hide();
+            }
+        }, function (newElements) {
+            var $newElems = $(newElements);
+            $('.icase').append($newElems);
+            $newElems.fadeIn();
+            return;
+        });
+        $(window).unbind('.infscr');
+        // 手动点击的元素
+        $('#next_inf').click(function () {
+            $('.icase').infinitescroll('retrieve');
+        });
+    });
+</script>

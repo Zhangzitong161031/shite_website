@@ -1,0 +1,119 @@
+{include file="public/header"}
+<div class="casesinfo-wrap" style="width:100%;">
+    <div class="content" style="padding-left:0; padding-right:0;">
+        <div class="title f-cb" style="width:90%; margin:0 auto; ">
+            <h2 class="fl fwn" style="color:#069ae4;">{$case.title}</h2>
+            <div class="share fr">
+                <div class="bdsharebuttonbox">
+                    <ul>
+
+                    <li><a  href="#" class="bds_tsina t-bg" data-cmd="tsina">
+                        <div class="t1" style="opacity:1;">成效</div>
+                        <div class="t2">AAA</div>
+                    </a></li>
+
+                    <li><a  href="#" class="bds_tsina t-bg" data-cmd="tsina">
+                        <div class="t1" style="opacity:.8;">故事</div>
+                        <div class="t2">AA</div>
+                    </a></li>
+                    <li><a  href="#" class="bds_tsina t-bg" data-cmd="tsina">
+                        <div class="t1" style="opacity:.8;">逻辑</div>
+                        <div class="t2">AA</div>
+                    </a></li>
+                    <li><a  href="#" class="bds_tsina t-bg" data-cmd="tsina">
+                        <div class="t1" style="opacity:1;">趣味</div>
+                        <div class="t2">AAA</div>
+                    </a></li>
+                    <li><a  href="#" class="bds_tsina t-bg" data-cmd="tsina">
+                        <div class="t1" style="opacity:1;">视觉</div>
+                        <div class="t2">AAA</div>
+                    </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <p>{$case.description}</p>
+        </div>
+        <div class="TxtShow">
+            {$case.content}
+            <table border="0" cellpadding="0" cellspacing="0"
+                style="background:url(/upfile/201712416243535839.jpg) no-repeat center; width: 100%; height: 176px">
+                <tbody>
+                    <tr class="firstRow">
+                        <td style="text-align: center;">
+                            <p><span style="font-size:14px;"><span style="color:#fff;">不得不承认 </span><br></span></p>
+                            <p><span style="font-size:14px;"><span style="color:#fff;">您别再做PPT了，去挖掘演讲的力量吧
+                                    </span><br></span></p>
+                            <p><strong><span style="font-size:14px;"><span style="color:#fff;">动人心弦 必有回响
+                                        </span><br></span></strong></p>
+                            <p><span style="font-size:12px;"><span style="color:#fff;">下拉观看本页PPT视频</span><br></span></p>
+                            <p><span style="font-size:12px;"><span style="color:#fff;">↓</span><br></span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            {if condition="$case.video neq ''"}
+            <p style="text-align: center;">
+                <iframe frameborder="0" height="490" src="{$case.video}" width="78.3%"></iframe>
+            </p>
+            {/if}
+        </div>
+    </div>
+    <div class="page f-cb" style="width:90%;">
+        {if condition="$pre_case.id neq 0"}
+        <a href="/ppt/case/{$pre_case.id}.html" class="fl">
+            <span class="fl t-bg"></span>
+            <em class="t-c">{$pre_case.title}</em>
+        </a>
+        {else}
+        <a href="#" class="fl">
+            <span class="fl t-bg"></span>
+            <em class="t-c">没有上一页了！</em>
+        </a>
+        {/if}
+        {if condition="$next_case.id neq 0"}
+        <a href="/ppt/case/{$next_case.id}.html" class="fr">
+            <span class="fr t-bg"></span>
+            <em class="t-c">{$next_case.title}</em>
+        </a>
+        {else}
+        <a href="#" class="fr">
+            <span class="fr t-bg"></span>
+            <em class="t-c">没有下一页了！</em>
+        </a>
+        {/if}
+    </div>
+</div>
+<div class="imain4" style="z-index:99999;">
+    <div class="itit">{<span>同类别行业设计案例</span>}</div>
+    <div class="mainbox">
+        <div class="icase">
+            {volist name="related_cases" id="related_case" key="index"}
+            <div {if condition="$index eq 3" }class="item mr0" {else}class="item " {/if}> <a
+                href="/ppt/case/{$related_case.id}" class="img">
+                <img src="{$related_case.cover_image}" alt="{$related_case.title}" /><i></i>
+                <div class="imgm">
+                    <p class="t"><span>客户:{$related_case.customer_name}</span></p>
+                    <p class="m">项目：{$related_case.title}</p>
+                </div>
+                </a>
+            </div>
+            {/volist}
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="r-float">
+    <ul>
+        <li class="short-one" style="width: 100px;"><a target="blank" href="http://wpa.qq.com/msgrd?V=3&amp;uin=1053153377&amp;Site=QQ客服&amp;Menu=yes" class="short">QQ客服</a>
+        </li>
+        <li class="long-one">
+            <p>咨询热线</p>
+            <div class="tel">
+                <a href="tel:15355058812">15355058812</a>
+            </div>
+        </li>
+    </ul>
+</div>
+{include file="public/footer"}

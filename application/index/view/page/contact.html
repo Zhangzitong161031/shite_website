@@ -1,0 +1,33 @@
+{include file="public/header"}
+<div id="mainer999">
+    <div class="contact_title">
+        CONTACt US
+    </div>
+    <div class="contact_right">
+        <div class="contact_text">
+            {$content}
+            <br>
+            <br>
+        </div>
+        <div class="baidu_map">
+            <iframe src="/map.html" class="baidu_map"></iframe>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}
+<script type="text/javascript">
+    $(function () {
+        $("#flexslider2").flexslider({
+            animation: "slide",
+            controlNav: false,
+            directionNav: true,
+            touch: true
+        });
+        $("#flexslider3").flexslider({
+            animation: "slide",
+            controlNav: false,
+            directionNav: true,
+            touch: true
+        });
+    });
+</script>

@@ -1,0 +1,213 @@
+<div id="footer">
+        <div class="pc_show pc_footer footbox">
+            <div class="pc_footer_left">
+                <img src="/public/static/index/images/footr2.jpg" alt="杭州石特微信号">
+            </div>
+            <div class="pc_footer_center">
+                <p id="fb1">你希望得到哪方面的业务帮助？</p>
+                <p id="fb2">联系我们，提供一站式品牌管家服务！</p>
+                <p id="fb3">合作从沟通开始</p>
+                <p id="fb4">本网站设计、源代码及其中所展示之作品</p>
+                <p id="fb5">著作权均属于杭州石特广告策划有限公司保留所有权。</p>
+            </div>
+            <div class="pc_footer_right">
+                <div class="link_way">
+                    <h1>联系信息</h1>
+                    <p>地址：杭州市西湖区文一西路172号湖畔大厦B座4楼</p>
+                    <p>电话：0571-8868 5587 15355437883</p>
+                    <p>Email：hzstad@126.com</p>
+                </div>
+                <div class="link_way_footer">
+                    <div class="fgz">
+                        关注我们<br>
+                        <a target="_blank" href="http://weibo.com/u/5483006682" target="_blank">
+                            <img src="/public/static/index/images/foot/fb1.png" alt="石特微博"></a>
+                        <a target="_blank" href="javascript:void(0)">
+                            <img src="/public/static/index/images/foot/fb2.png" alt="石特微信">
+                            <span>
+                            <img src="/public/static/index/images/foot/erweima.jpg" alt="石特微信号">
+                            <br>微信号：15355437883</span>
+                        </a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes"
+                            target="_blank">
+                            <img src="/public/static/index/images/foot/fb3.png" alt="在线咨询">
+                        </a>
+                        <p>浙公网安备33010602001348</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob_footer mobile_show">
+            <div class="footer_top_link_way">
+                <h1>S.T.DESIGN</h1>
+                <p>杭州市西湖区文一西路172号湖畔大厦B座4楼</p>
+                <p>电话：<a target="_blank" href="tel:0570-88685587">0571-8868 5587</a> 
+                <a target="_blank"  href="tel:15355437883">15355437883</a> </p>
+                <p>QQ：136391636 383931460</p>
+                <p>邮箱：hzstad@126.com</p>
+            </div>
+            <div class="erwei_m">
+                <img src="/public/static/index/images/g1.jpg" alt="">
+            </div>
+            <p class="mb_dec">联系我们，提供一站式品牌管家服务！</p>
+            <div class="declare">
+                <p>本网站设计、源代码及其中所展示之作品</p>
+                <p>著作权均属于杭州石特广告策划有限公司保留所有权。</p>
+                <p>备案号：浙ICP备12002870号 浙公网安备33010602001348号</p>
+            </div>
+        </div>
+        <!-- <p class="copy_right">浙ICP备12002870号；浙公网安备33010602001348</p> -->
+        <p class="copy_right" style="text-align: left;padding-left:50px">
+            {volist name="links" id="link"}
+            <span><a target="_blank" href="{$link.url}">{$link.title}</a>&nbsp;&nbsp;|</span>
+            {/volist}
+        </p>
+    </div>
+    <div class="rtool" id="kefu">
+        <div class="tit">设计咨询<i class="clo">×</i></div>
+        <div class="con">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes" target="_blank"
+                class="item item_qq"><span style="width: 40px;line-height: 30px">业务1</span>286329829</a>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383931460&amp;site=qq&amp;menu=yes" target="_blank"
+                class="item item_qq"><span style="width: 40px;line-height: 30px">业务2</span>383931460</a>
+            <a target="_blank" href="tel:15355437883" class="item item_tel"><span>咨询</span>15355437883</a>
+            <a target="_blank" href="tel:0571-88685587" class="item item_tel"><span>客服</span>0571-88685587</a>
+        </div>
+    </div>
+    <div class="rtool_open">在线咨询</div>
+    </body>
+    </html>
+<script src="__PPT__/js/main.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<script>
+    function SetMenu() {
+        if (document.getElementById("Mn").style.display != "none") {
+            document.getElementById("Mn").style.display = "none";
+            document.getElementById("Mn").className = "MobileMenu";
+        } else {
+            document.getElementById("Mn").style.display = "block";
+            document.getElementById("Mn").className = "MobileMenu animated fadeIn";
+        }
+    }
+</script>
+<script>
+    $(function () {
+        Enter($(".i-intro .tips").children().eq(0), "top", 0, 4, 600, 300)
+        //Enter($(".show-up"), "top", 0, 1, 600, 300)
+        setTimeout(function () {
+            $(".show-up").stop().animate({
+                top: 0,
+                opacity: 1
+            }, 600, "swing")
+        }, 900)
+        $(window).scroll(function () {
+            var TOP = $(window).scrollTop();
+            if (TOP > $(".i-about").offset().top - 400 && $(".i-about").attr("class") != "i-about end") {
+                $(".i-about").addClass("end")
+                Enter($(".i-about .list li").eq(0), "left", 0, 3, 600, 300)
+            }
+            if (TOP > $(".i-cases").offset().top - 400 && $(".i-cases").attr("class") != "i-cases end") {
+                $(".i-cases").addClass("end")
+                Enter($(".i-cases .list li").eq(0), "top", 0, 3, 500, 300)
+                setTimeout(function () {
+                    Enter($(".i-cases .list li").eq(3), "top", 0, 6, 500, 300)
+                }, 300)
+                setTimeout(function () {
+                    $(".i-cases .list li").css({
+                        top: 0,
+                        opacity: 1
+                    })
+                }, 1200)
+            }
+            if (TOP > $(".i-solutions").offset().top - 400 && $(".i-solutions").attr("class") != "i-solutions end") {
+                $(".i-solutions").addClass("end")
+                $(".i-solutions .bg").eq(0).stop().animate({
+                    top: 0,
+                    opacity: 1
+                }, 1000, "linear", function () {
+                    Enter($(".i-solutions .btn").eq(0), "X", 0, 7, 600, 300)
+                })
+                $(".i-solutions .bg").eq(1).stop().animate({
+                    top: 0,
+                    opacity: 1
+                }, 800, "linear")
+                $(".i-solutions .bg").eq(2).stop().animate({
+                    top: 0,
+                    opacity: 1
+                }, 600, "linear")
+            }
+            if (TOP > $(".i-process").offset().top - 400 && $(".i-process").attr("class") != "i-process end") {
+                $(".i-process").addClass("end")
+                $(".i-process .list").stop().animate({ width: 1106 }, 1000, "linear", function () {
+                    Enter($(".i-process .btn").eq(0), "X", 0, 8, 400, 300)
+                })
+                $(".i-process .btn").eq(0).addClass("cur")
+                var LightNum = 0,
+                    LightAuto = setInterval(function () {
+                        LightNum++;
+                        if (LightNum == $(".i-process .btn").length) {
+                            LightNum = 0
+                        }
+                        $(".i-process .btn").eq(LightNum).addClass("cur").siblings().removeClass("cur")
+                    }, 3000)
+            }
+            if (TOP > $(".i-parnter").offset().top - 400 && $(".i-parnter").attr("class") != "i-parnter end") {
+                $(".i-parnter").addClass("end")
+                Enter($(".i-parnter .list li").eq(0), "top", 0, $(".i-parnter .list li").length, 600, 300)
+            }
+            if (TOP > $(".i-cases").offset().top) {
+                $(".backtop").css("opacity", 1)
+            } else {
+                $(".backtop").css("opacity", 0)
+            }
+        })
+
+        $(".i-intro .tips a.more").click(function () {
+            $("html,body").stop().animate({ scrollTop: [$(".i-about").offset().top, 'easeInOutCubic'] }, 1000)
+        })
+
+        var $Ul = $(".i-cases ul"),
+            $Btn = $(".i-cases .btn"),
+            htmlBtn = "",
+            CasesNum = 0
+        var winHref = document.location.href,
+            Href = winHref.split("#")[1];
+        Initialize(Href)
+        $("a.page").click(function (e) {
+            setTimeout(function () {
+                var winHref = document.location.href,
+                    Href = winHref.split("#")[1];
+                Initialize(Href)
+            }, 100)
+        })
+        function Initialize(e) {
+            switch (e) {
+                case ('Cases'): $("html,body").stop().animate({ scrollTop: [$(".i-cases").offset().top, 'easeInOutCubic'] }, 1000)
+                    break;
+                case ('Process'): $("html,body").stop().animate({ scrollTop: [$(".i-process").offset().top, 'easeInOutCubic'] }, 1000)
+                    break;
+                case ('Partner'): $("html,body").stop().animate({ scrollTop: [$(".i-parnter").offset().top, 'easeInOutCubic'] }, 1000)
+                    break;
+            };
+        };
+    })
+</script>
+<script src="__PPT__/js/main.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<script src="__PPT__/js/three.min.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<script src="__PPT__/js/Projector.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<script src="__PPT__/js/CanvasRenderer.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<script src="__PPT__/js/canvas.js?v=v1" type="text/javascript" charset="utf-8"></script>
+<!--[if lte IE 9]>
+<script type="text/javascript">
+    $('.canvas').show();
+</script>
+<![endif]-->
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7def48b0e2ce474a6eb006df0253ebea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>

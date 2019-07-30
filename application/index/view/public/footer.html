@@ -1,0 +1,110 @@
+<div id="footer">
+        <div class="pc_show pc_footer footbox">
+            <div class="pc_footer_left">
+                <img src="/public/static/index/images/footr2.jpg" alt="杭州石特微信号">
+            </div>
+            <div class="pc_footer_center">
+                <p id="fb1">你希望得到哪方面的业务帮助？</p>
+                <p id="fb2">联系我们，提供一站式品牌管家服务！</p>
+                <p id="fb3">合作从沟通开始</p>
+                <p id="fb4">本网站设计、源代码及其中所展示之作品</p>
+                <p id="fb5">著作权均属于杭州石特广告策划有限公司保留所有权。</p>
+            </div>
+            <div class="pc_footer_right">
+                <div class="link_way">
+                    <h1>联系信息</h1>
+                    <p>地址：杭州市西湖区文一西路172号湖畔大厦B座4楼</p>
+                    <p>电话：0571-8868 5587 15355437883</p>
+                    <p>Email：hzstad@126.com</p>
+                </div>
+                <div class="link_way_footer">
+                    <div class="fgz">
+                        关注我们<br>
+                        <a target="_blank" href="http://weibo.com/u/5483006682" target="_blank">
+                            <img src="/public/static/index/images/foot/fb1.png" alt="石特微博"></a>
+                        <a target="_blank" href="javascript:void(0)">
+                            <img src="/public/static/index/images/foot/fb2.png" alt="石特微信">
+                            <span>
+                            <img src="/public/static/index/images/foot/erweima.jpg" alt="石特微信号">
+                            <br>微信号：15355437883</span>
+                        </a>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes"
+                            target="_blank">
+                            <img src="/public/static/index/images/foot/fb3.png" alt="在线咨询">
+                        </a>
+                        <p>浙公网安备33010602001348</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob_footer mobile_show">
+            <div class="footer_top_link_way">
+                <h1>S.T.DESIGN</h1>
+                <p>杭州市西湖区文一西路172号湖畔大厦B座4楼</p>
+                <p>电话：<a target="_blank" href="tel:0570-88685587">0571-8868 5587</a> 
+                <a target="_blank"  href="tel:15355437883">15355437883</a> </p>
+                <p>QQ：136391636 383931460</p>
+                <p>邮箱：hzstad@126.com</p>
+            </div>
+            <div class="erwei_m">
+                <img src="/public/static/index/images/g1.jpg" alt="">
+            </div>
+            <p class="mb_dec">联系我们，提供一站式品牌管家服务！</p>
+            <div class="declare">
+                <p>本网站设计、源代码及其中所展示之作品</p>
+                <p>著作权均属于杭州石特广告策划有限公司保留所有权。</p>
+                <p>备案号：浙ICP备12002870号 浙公网安备33010602001348号</p>
+            </div>
+        </div>
+        <!-- <p class="copy_right">浙ICP备12002870号；浙公网安备33010602001348</p> -->
+        <p class="copy_right" style="text-align: left;padding-left:50px">
+            {volist name="links" id="link"}
+            <span><a target="_blank" href="{$link.url}">{$link.title}</a>&nbsp;&nbsp;|</span>
+            {/volist}
+        </p>
+    </div>
+    <div class="rtool" id="kefu">
+        <div class="tit">设计咨询<i class="clo">×</i></div>
+        <div class="con">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes" target="_blank"
+                class="item item_qq"><span style="width: 40px;line-height: 30px">业务1</span>286329829</a>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383931460&amp;site=qq&amp;menu=yes" target="_blank"
+                class="item item_qq"><span style="width: 40px;line-height: 30px">业务2</span>383931460</a>
+            <a target="_blank" href="tel:15355437883" class="item item_tel"><span>咨询</span>15355437883</a>
+            <a target="_blank" href="tel:0571-88685587" class="item item_tel"><span>客服</span>0571-88685587</a>
+        </div>
+    </div>
+    <div class="rtool_open">在线咨询</div>
+    </body>
+    </html>
+<script type="text/javascript" src="/public/static/index/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/public/static/index/js/xslider.js"></script>
+<script type="text/javascript" src="/public/static/index/js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+    $(function () {
+        $(".rtool .tit .clo").click(function () {
+            $(".rtool").hide();
+            $(".rtool_open").show();
+        });
+        $(".rtool_open").click(function () {
+            $(".rtool").show();
+            $(".rtool_open").hide();
+        });
+    });
+    function SetMenu() {
+        if (document.getElementById("Mn").style.display != "none") {
+            document.getElementById("Mn").style.display = "none";
+        } else {
+            document.getElementById("Mn").style.display = "block";
+        }
+    }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7def48b0e2ce474a6eb006df0253ebea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>

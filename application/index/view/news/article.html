@@ -1,0 +1,51 @@
+{include file="public/header"}
+<div class="banner"><img src="{$banner_pc.src}"  alt="石特观闻"/></div>
+<div class="mbanner"><img src="{$banner_m.src}"  alt="石特观闻"/></div>
+<div id="mainer">
+    <div class="imain8">
+        <div class="mainbox">
+            <div class="news_vbox">
+                <div class="news_left">
+                    <div class="t"><img src="{$article.thumbnail}" alt="{$article.title}"/></div>
+                    <div class="t2">最新资讯：</div>
+                    <div class="m">
+                        <ul>
+                            {volist name="newest_articles" id="newest_article"}
+                                <li>2018.08.30<a href="/news/{$newest_article.id}.html">{$newest_article.title}</a></li>
+                            {/volist}
+                        </ul>
+                    </div>
+                    <div class="f"><a href="/news.html">返回资讯 </a></div>
+                </div>
+                <div class="news_right">
+                    <div class="t">{$article.title}</div>
+                    <div class="m">{$article.content}</div>
+                    <div class="pagef">
+                        <div class="pages_up"></div>
+                        {if condition="$pre_id neq 0"}
+                        <a href="/news/{$pre_id}.html" class="l">
+                          <b>━</b> 上一个案例
+                        </a>
+                        {else}
+                        <a  class="l">
+                            <b>━</b> 没有上一个了！
+                          </a>
+                        {/if}
+                        {if condition="$next_id neq 0"}
+                        <a href="/news/{$next_id}.html"  class="r">
+                          下一个案例 <b>+</b>
+                        </a>
+                        {else}
+                        <a  class="l">
+                            <b>━</b> 没有下一个了！
+                          </a>
+                        {/if}
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

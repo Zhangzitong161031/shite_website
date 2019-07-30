@@ -1,0 +1,27 @@
+{include file="public/header"}
+<link rel="stylesheet" href="__INDEX__/css/bootstrap.min.css">
+<div class="banner"><img src="{$banner_pc.src}"  alt="石特观闻"/></div>
+<div class="mbanner"><img src="{$banner_m.src}"  alt="石特观闻"/></div>
+<div id="mainer">
+    <div class="imain7">
+        <div class="mainbox">
+            <div class="inews_box">
+                <div class="inews inews2">
+                    <div class="tit">石特观闻</div>
+                    <ul>
+                        {volist  name="articles" id="article" key="index"}<li {if condition="$index%2 eq 0"} class="mr0" {/if} >
+                            <a href="/news/{$article.id}.html"><b>·</b>&nbsp;{$article.title}</a><span class="time">({$article.time|mb_substr=0,10})</span>
+                        </li>
+                        {/volist}
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="clear" style="height:15px;"></div>
+                <div class="pages">
+                    {$articles->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

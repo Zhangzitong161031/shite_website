@@ -1,0 +1,19 @@
+{include file="public/header"}
+<div class="index-page">
+    <div class="index-page-title clear" >
+        <h3>{$law.title}</h3>
+    </div>
+    <div class="index-page-show">
+        {$law.content}
+    </div>
+</div>
+<div class="next_prev clear">
+    <a href="/pack/law/{$pre_law.id}.html" class="fl">
+        <span class="fl t-bg"></span>
+        <em class="t-c">&lt;{$pre_law.title}</em>
+    </a><br>
+    <a href="/pack/law/{$next_law.id}.html" class="fr">
+        <span class="fr t-bg"></span><em class="t-c">{$next_law.title} &gt;</em>
+    </a><br>
+</div>
+{include file="public/footer"}

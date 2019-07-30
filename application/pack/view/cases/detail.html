@@ -1,0 +1,150 @@
+{include file="public/header"}
+<div class="banner">
+    <img src="__PACK__/images/pack_bgpic.jpg" alt="banner">
+</div>
+<div id="mainer">
+    <div class="imain4" style="padding:0;">
+        <div class="itit">{<span><b>用石力，造就独特！</b></span>}</div>
+        <div class="icaset icaset2">
+            <a class="detail_cate hover" href="/pack/{$cur_top_cate.url_prefix}.html"> {$cur_top_cate.catename} </a>
+        </div>
+        <div class="mnav mnav2">
+            {volist name="cur_second_cates" id="second_cate"}
+            <a href="/pack/{$second_cate['url_prefix']}.html" {if condition="$second_cate['id'] eq $cur_cate_info['id']"}class="hover" {/if}>{$second_cate.catename} </a>
+            {/volist} 
+        </div>
+         <div class="mainbox">
+                <div class="case_vbox">
+                    <div class="case_vtop">
+                        <div class="t">{$case_detail.title}</div>
+                        <div class="m">
+                            {if condition="$case_detail.customer_name neq ''"}
+                            <p class="p pc_show">
+                                <b><span>客户名称：</span></b>
+                                <b><span>{$case_detail.customer_name}</span></b>
+                            </p>
+                            {/if}
+                            {if condition="$case_detail.service_Items neq ''"}
+                            <p class="p pc_show">
+                                <b><span>服务项目：</span></b>
+                                <b>{$case_detail.service_Items}</b>
+                            </p><br>{/if}
+                            {if condition="$case_detail.project_brief neq ''"}
+                            <p class="p pc_show" style="margin-left:0.0000pt;text-indent:0.0000pt;background:#FFFFFF;">
+                                <b><span>项目简述：</span></b>
+                            </p>
+                            <p class="p pc_show">
+                                {$case_detail.project_brief}
+                            </p><br>{/if}
+                            {if condition="$case_detail.project_background neq ''"}<p class="p pc_show">
+                                <b><i>项目背景：</i></b>
+                            </p>
+                            <p class="p pc_show" style="background:#FFFFFF;">
+                                {$case_detail.project_background}
+                            </p>
+                            <br>{/if}
+                            {if condition="$case_detail.project_focus neq ''"}
+                            <p class="p pc_show">
+                                <b style="text-indent:0pt;">项目焦点：</b>
+                            </p>
+                            <p class="p pc_show">
+                                {$case_detail.project_focus}
+                            </p><br>
+                            {/if}
+                            {if condition="$case_detail.solution neq ''"}
+                            <p class="p pc_show">
+                                <b style="text-indent:0pt;">解决问题：</b>
+                            </p>
+                            <p class="p pc_show">
+                                {$case_detail.solution}
+                            </p>
+                            {/if}
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="case_vcon">
+                        <div class="t mobile_show">{$case_detail.title}</div>
+                        {if condition="$case_detail.project_brief neq ''"}
+                        <div class="p mobile_show">
+                            <b><span>项目简述：</span></b>
+                        </div>
+                        <div class="p mobile_show">
+                            {$case_detail.project_brief}
+                        </div>{/if}
+                        {$case_detail.content}
+                        <div class="back">
+                            <a href="/pack/{$cur_cate_info.url_prefix}.html">返回案例 | BACK</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div style="height:20px; background:#fff; z-index:9999; position:relative;"></div>
+        <div class="pagef" style=" z-index:9999; position:relative;">
+            <div class="pages_up"></div>
+            {if condition="$pre_case.id neq 0"}
+            <a href="/pack/case/{$pre_case.id}.html" class="l">
+                <b>━</b> 上一个案例
+            </a>
+            {else}
+            <a class="l">
+                <b>━</b> 没有上一个了！
+            </a>
+            {/if}
+            {if condition="$next_case.id neq 0"}
+            <a href="/pack/case/{$next_case.id}.html" class="r">
+                下一个案例 <b>+</b>
+            </a>
+            {else}
+            <a class="l">
+                <b>━</b> 没有下一个了！
+            </a>
+            {/if}
+            <div class="clear"></div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<div class="imain4" style="z-index:99999;">
+    <div class="itit">{<span>同类别行业设计案例</span>}</div>
+    <div class="mainbox">
+        <div class="icase">
+            {volist name="related_cases" id="related_case" key="index"}
+            <div {if condition="$index eq 3" }class="item mr0" {else}class="item " {/if}> <a href="/pack/case/{$related_case.id}.html" class="img">
+                <img src="{$related_case.cover_image}"  alt="{$related_case.title}" /><i></i>
+                <div class="imgm">
+                    <p class="t"><span>客户:{$related_case.customer_name}</span></p>
+                    <p class="m">项目：{$related_case.title}</p>
+                </div>
+                </a>
+            </div>
+            {/volist}
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</div>
+{include file="public/footer"}
+<script>
+    (function ($) {
+        $(window).load(function () {
+            $(".case_vtop .m").mCustomScrollbar({
+                scrollInertia: 150
+            });
+        });
+    })(jQuery);
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > 10) {
+            $("#header").addClass('header_box');
+            $(".logo a img").attr('src', '/public/static/index/images/logo_w.png');
+        } else {
+            $("#header").removeClass('header_box');
+            $(".logo a img").attr('src', '/public/static/index/images/logo.png');
+        }
+        if ($(document).scrollTop() > ($(".case_vcon").offset().top - 100)) {
+            $(".case_vtop").addClass('case_vtops');
+        } else {
+            $(".case_vtop").removeClass('case_vtops');
+        }
+
+    });
+</script>

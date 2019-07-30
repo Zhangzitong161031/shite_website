@@ -1,0 +1,180 @@
+{include file="public/header"}
+<style>
+    #infscr-loading {
+        clear: both;
+        padding-bottom: 10px;
+        text-align: center;
+        display: none;
+    }
+    #infscr-loading div {
+        text-align: center;
+    }
+</style>
+<link href="__INDEX__/css/flexslider.css" rel="stylesheet" />
+<div class="itopabox pc_show">
+    <div class="itopa">
+        <div class="banner">
+            <div id="flexslider" class="flexslider">
+                <ul class="slides">
+                    {volist name="pc_slides" id="slide"}
+                    <li><img src="{$slide.src}" alt="PC端轮播图"/></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="itopabox mobile_show">
+    <div class="itopa">
+        <div class="banner_m">
+            <div id="flexslider2" class="flexslider">
+                <ul class="slides">
+                    {volist name="mobile_slides" id="slide"}
+                    <li><img src="{$slide.src}"  alt="移动端轮播图"/></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainer">
+    <div class="imain4">
+        <div class="itit">{<span><b>用实力，造就独特</b></span>}</div>
+        <div class="icaset icaset2 pc_show">
+            <a href="/brand_design.html" {if condition="$cur_top_cate['url_prefix'] eq 'brand_design'" }class="hover"{/if}>品牌设计 </a>
+            <a href="/it_service.html" {if condition="$cur_top_cate['url_prefix'] eq 'it_service'"}class="hover" {/if}>IT信息服务 </a>
+            <a href="/publicity_materials.html" {if condition="$cur_top_cate['url_prefix'] eq 'publicity_materials' or $cur_top_cate['url_prefix'] eq 'case'" }class="hover" {/if}>宣传画册 </a>
+            <a href="/space_guidance.html" {if condition="$cur_top_cate['url_prefix'] eq 'space_guidance'" }class="hover" {/if}>空间导视 </a>
+            <a href="/photography.html" {if condition="$cur_top_cate['url_prefix'] eq 'photography'" }class="hover"{/if}>商业摄影 </a> 
+        </div> 
+        <div class="icaset icaset2 mobile_show">
+            <a href="/brand_design.html" {if condition="$cur_top_cate['url_prefix'] eq 'brand_design'" }class="hover"{/if}>品牌设计</a>
+            <a href="/publicity_materials.html" {if condition="$cur_top_cate['url_prefix'] eq 'publicity_materials' or $cur_top_cate['url_prefix'] eq 'case'"}class="hover" {/if}>宣传画册 </a>
+            <a href="/it_service.html" {if condition="$cur_top_cate['url_prefix'] eq 'it_service'" }class="hover" {/if}>IT信息服务 </a>
+            <a href="/space_guidance.html" {if condition="$cur_top_cate['url_prefix'] eq 'space_guidance'"}class="hover" {/if}>空间导视 </a>
+            <a href="/photography.html" {if condition="$cur_top_cate['url_prefix'] eq 'photography'" }class="hover" {/if}>商业摄影 </a> 
+        </div>
+        <div class="mnav mnav2">
+        {volist name="cur_second_cates" id="second_cate"}
+            <a href="/{$second_cate.url_prefix}.html" {if condition="$second_cate['id'] eq $cur_cate_info['id']" }class="hover" {/if}>
+                {$second_cate.catename}
+            </a>
+        {/volist} 
+        </div> 
+        {if condition="$cur_top_cate.id eq 123 or $cur_top_cate.id eq 123"}
+            <div class="Plist"   style="padding-bottom:0px; margin-bottom:8px; min-height:88px;">
+                <div class="Plists Plists2" style="padding:12px 15px 6px 15px;">
+                    <div class="l">行业分类：</div>
+                    <div class="r">
+                        <ul class="Plistsv c">
+                            <li class="bl"><a {if condition="$cur_industry_type_id eq 0" }class="now"{/if} href="/{$cur_cate_info.url_prefix}">全部分类</a></li>
+                            {volist name="industry_types" id="industry_type"}
+                            <li>
+                                <a href="/{$cur_cate_info.url_prefix}/industry_type/{$industry_type.id}.html"
+                                    {if condition="$industry_type.id eq $cur_industry_type_id"}class="now" 
+                                    {/if}>{$industry_type.name} 
+                                </a> 
+                            </li> 
+                            {/volist} 
+                        </ul>
+                    </div> 
+                </div> 
+                <div class="clear"></div>
+            </div>
+        {/if}
+        <div class="mainbox">
+            <div class="icase">
+                {volist name="cases" id="case" key="index"}
+                <div class="item {if condition=" $index%3 eq 0 "}mr0{/if}">
+                    <a href="/case/{$case.id}.html" class="img">
+                        <img src="{$case.cover_image}"  alt="{$case.title}" /><i></i>
+                        <div class="imgm">
+                            <p class="t"><span>客户：{$case.customer_name}</span></p>
+                            <p class="m">项目：{$case.title}</p>
+                        </div>
+                    </a>
+                    <a href="/case/{$case.id}.html" class="t3">{$case.title}</a>
+                </div>
+                {/volist}
+            </div>
+            <div class="clear"></div>
+            <div class="icasef">
+                <a href="javascript:void(0)" id="next_inf" class="btn2">
+                <img src="__INDEX__/images/imore.png" alt="查看更多商业案例"/>查看更多商业案例</a>
+            </div>
+            <div id="more" style="display:none;">
+                {if condition="$cur_industry_type_id eq 0"}
+                <a href="/{$cur_cate_info['url_prefix']}/2.html"></a>
+                {else}
+                <a href="/{$cur_cate_info['url_prefix']}/industry_type/{$cur_industry_type_id}/2.html"></a>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}
+<script>
+    $(function () {
+        $("#flexslider").flexslider({
+            animation: "fade",
+            slideshowSpeed: 5000,
+            animationSpeed: 1000,
+            directionNav: true,
+            touch: true
+        });
+    });
+    $("#flexslider2").flexslider({
+        animation: "fade",
+        slideshowSpeed: 5000,
+        animationSpeed: 1000,
+        directionNav: true,
+        touch: true
+    });
+    $(function () {
+        if ($(window).width() > 630) {
+            $('body').animate({
+                scrollTop: $(window).width() * 0.286
+            }, 600);
+        } else {
+            $('body').animate({
+                scrollTop: $(window).width() * 0.52
+            }, 600);
+        }
+    });
+    $(function () {
+        $(".spages").hide();
+        $('.icase .item').fadeIn();
+        var sp = 1;
+        $(".icase").infinitescroll({
+            navSelector: "#more",
+            nextSelector: "#more a",
+            itemSelector: ".icase .item",
+            animate: true,
+            debug: true, //调试的时候，可以打开
+            maxPage: 3, //加载次数
+            loading: {
+                img: "__INDEX__/images/loading_1.gif",
+                msgText: '加载中...',
+                finishedMsg: '想了解更多，请咨询设计顾问',
+                finished: function () {
+                    sp++;
+                    $("#infscr-loading").hide();
+                }
+            },
+            errorCallback: function () {
+                $(".icasef").hide();
+            }
+        }, function (newElements) {
+            var $newElems = $(newElements);
+            $('.icase').append($newElems);
+            $newElems.fadeIn();
+            return;
+        });
+        $(window).unbind('.infscr');
+        // 手动点击的元素
+        $('#next_inf').click(function () {
+            $('.icase').infinitescroll('retrieve');
+        });
+    });
+</script>
+<script type="text/javascript" src="__INDEX__/js/jquery.infinitescroll.js"></script>

@@ -1,0 +1,59 @@
+{include file="public/header"}
+<div class="banner"><img src="{$banner_pc.src}" alt="石特观闻"/></div>
+<div class="mbanner"><img src="{$banner_m.src}"  alt="石特观闻"/></div>
+<div id="mainer">
+    <div class="imain7">
+        <div class="mainbox">
+            <div class="inews_box">
+                {volist name="news_list_groups" id="news_list_group" key="index"}
+                <div class="inews {if condition='$index eq 3'}mr0{/if}" id="inews_{$index}">
+                    <div class="tit"><a href="/{$news_list_group.cate_url_prefix}.html" class="more">+ 更多观闻</a>{$news_list_group.cate_name}</div>
+                        <div class="toutiao">
+                            <a href="/news/{$news_list_group.toutiao.id}.html" class="img">
+                                <img src="{$news_list_group.toutiao.thumbnail}" alt="{$news_list_group.toutiao.title}"/>
+                            </a>
+                            <a href="/news/{$news_list_group.toutiao.id}.html" class="t"></a>
+                            <p class="m">
+                                {$news_list_group.toutiao.desc|mb_substr=0,60}<span class="time">({$news_list_group.toutiao.time|mb_substr=0,10})</span>
+                            </p>
+                        </div>
+ 
+                        <div class="con">
+                            <ul>
+                                {volist name="$news_list_group.arclist" id="article"}
+                                <li><a href="/news/{$article.id}.html"><b>·</b>&nbsp;{$article.title}</a>
+                                    <span class="time">({$article.time|mb_substr=0,10})</span>
+                                </li>
+                                {/volist}
+                            </ul>
+                        </div>
+                    <div class="foot"><a href="/{$news_list_group.cate_url_prefix}.html">更多观闻</a></div>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+            <div class="news_foot">
+                <div class="tit">品牌诊断与机会洞察</div>
+                <div class="left"><img src="{$banner_bottom.src}" alt="品牌诊断与机会洞察" /></div>
+                <div class="right">
+                    <p><b>品牌诊断与机会洞察</b></p>
+                    <p> 企业与品牌环境研究 | 消费行为洞察研究 | 品牌核心突破机会洞察 | 品牌定位 | <span
+                            style="white-space:normal;">品牌核心价值挖掘&nbsp;</span><br /><span
+                            style="white-space:normal;">品牌核心价值提炼</span> | 品牌差异价值构建 | 品牌战略定位规划 | 品牌价值体系规划
+                    </p>
+                    <p><br /></p>
+                    <p><b>品牌包装策划与设计</b></p>
+                    <p> 品牌策划 | 品牌命名 | 品牌核心标识策略与设计 | 企业VI视觉系统设计 | 企业品牌标志设计
+                    </p>
+                    <p><br /></p>
+                    <p><b>产品包装设计 </b></p>
+                    <p> 产品包装设计 | 全面检视产品结构现状 | 竞争品牌产品结构分析 | 产品结构整体规划建议 &nbsp; | 产品核心概念诉求 <br />产品包装符号确立 |
+                        产品包装系列规范 | 产品整体包装设计
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

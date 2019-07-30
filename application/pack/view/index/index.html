@@ -1,0 +1,114 @@
+{include file="public/header"}
+<div class="banner">
+	<img src="__PACK__/images/pack_bgpic.jpg" alt="包装站横幅banner">
+</div>
+<div class="index-about">
+	<div class="index-about2">
+		<h5>品牌包装策划设计</h5>
+		<div class="detail">石特广告旗下部门，专注于品牌包装策划设计的专业机构，包装综合解决方案服务品牌
+			<br>提供定制化包装设计，为客户提高销售能力、提升品牌知名度<br>
+			<span style="line-height:36px; font-weight:bolder;">快消品、农业产品、森林食品、药品保健品、化妆品、餐饮、酒水、珠宝、茶叶……</span><br>10多年专业的品牌包装策划设计
+		</div>
+	</div>
+</div>
+<div class="index-case">
+	<div class="index-case-content">
+		<ul class="clear">
+			{volist name="cases" id="case"}
+			<li class='icc-listv'>
+				<a target="_blank" target=_blank href='/pack/case/{$case.id}.html'>
+					<div class='t1'><img src='{$case.cover_image}'alt="{$case.title}"></div>
+					<div class='t2'>{$case.title}</div>
+				</a>
+			</li>
+			{/volist}
+		</ul>
+		<div class="icasef">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes" target="_blank" class="btn1">
+			<img src="/public/static/index/images/index/iqq.png" alt="立即咨询">立即咨询</a>
+			<a target="_blank" href="/pack/medical_products.html" class="btn2">
+			<img src="/public/static/index/images/index/imore.png" alt="查看更多案例">查看更多案例</a>
+		</div>
+	</div>
+</div>
+<div class="DrugMore">
+	医药品牌LOGO设计 — 杭州医药健康产品策略包装设计
+</div>
+<div class="index-case-content ww">
+	<ul class="clear">
+		{volist name="medical_logo_cases" id="medical_logo_case"}
+		<li class='icc-list' style='position:relative;'>
+			<a target="_blank" href='/pack/case/{$medical_logo_case.id}.html'>
+				<img src='{$medical_logo_case.cover_image}' alt="{$medical_logo_case.title}">
+				<div class='icc-list-dark2'>
+					<p>
+						<strong>{$medical_logo_case.title}</strong>
+					</p>
+				</div>
+			</a>
+		</li>
+		{/volist}
+	</ul>
+</div>
+<div class="DrugMore">
+	医药宣传推广设计 — 杭州专业的医药包装设计公司
+</div>
+<div class="index-case-content ww">
+	<ul class="clear">
+		{volist name="medical_propagand_cases" id="medical_propagand_case"}
+		<li class='icc-list' style='position:relative;'>
+			<a target="_blank" href='/pack/case/{$medical_propagand_case.id}.html'>
+				<img src='{$medical_propagand_case.cover_image}' alt="{$medical_propagand_case.title}">
+				<div class='icc-list-dark2'>
+					<p>
+						<strong>{$medical_propagand_case.title}</strong>
+					</p>
+				</div>
+			</a>
+		</li>
+		{/volist}
+	</ul>
+</div>
+<div class="imain2">
+	<div class="itit">{<span>关于石特</span>}</div>
+	<div class="mainbox">
+		<div class="iabout intro">
+			<div class="t">
+				<div style="text-align:center;">
+					<b>
+						杭州石特广告策划有限公司成立于2008年
+						<br />是华东地区颇具影响力的品牌全案策划与设计公司，提供一站式品牌管家服务
+						<br />新品牌建立、老品牌升级改造以及品牌年度综合设计制作落地
+						<br />用实力，造就你的独特！构建卓越的品牌体系，实现品牌价值的最大化
+						<br />众多行业的品牌服务经历，便捷高效的合作模式，让你省时、省力、省心、省钱。
+					</b>
+				</div>
+			</div>
+			<div class="m" style="font-size: 14px;text-indent: 2em">
+					杭州石特广告策划有限公司成立于2008年,是华东地区颇具影响力的品牌全案策划与设计公司，提供一站式品牌管家服务。新品牌建立、老品牌升级改造以及品牌年度综合设计制作落地，用实力，造就你的独特！构建卓越的品牌体系，实现品牌价值的最大化。众多行业的品牌服务经历，便捷高效的合作模式，让你省时、省力、省心、省钱。
+			</div>
+			<div class="fs">
+				<a target="_blank" href="/about.html" class="btn2">
+					<img src="/public/static/index/images/index/imore.png" alt="了解更多">了解更多</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="imain11">
+	<div class="mainbox">
+		<div class="iservice2" style="background:url(/public/static/index/images/ihengfu.jpg) center center no-repeat;">
+			<div class="m"><a target="_blank" href="/about.html">进入服务了解更多</a></div>
+		</div>
+	</div>
+</div>
+<div class="DurgMainText">
+	<ul class="clear">
+		{volist name="laws" id="law"}
+		<li>
+			<span>●</span>
+			<a target="_blank" target=_blank href='/pack/law/{$law.id}.html'>{$law.title}</a>
+		</li>
+		{/volist}
+	</ul>
+</div>
+{include file="public/footer"}

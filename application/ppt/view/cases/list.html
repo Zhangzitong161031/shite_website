@@ -1,0 +1,67 @@
+{include file="public/header"}
+<div class="cases-wrap">
+	<div class="i-cases cases-list">
+		<div class="i-tips">
+			<h2 class="fwn">经典案例</h2>
+			<p>动响演绎为客户的每一次良机定制演示设计（包含：品牌形象、营销推广、商务竞标、商业技术、项目申报、项目评比等），创造了显著成效。<br />查看更多案例请联系QQ客服</p>
+		</div>
+		<div class="icaset icaset2 pc_show">
+				<a href="/ppt/case.html" {if condition="$cur_cate_info.url_prefix eq 'case'"}class="hover"{/if}>全部案例</a> 
+				<a href="/ppt/product_release.html"  {if condition="$cur_cate_info.url_prefix eq 'product_release'"}class="hover"{/if}>产品发布</a> 
+				<a href="/ppt/enterprise_introduction.html"  {if condition="$cur_cate_info.url_prefix eq 'enterprise_introduction'"}class="hover"{/if}>企业介绍</a> 
+				<a href="/ppt/business_roadshow.html"  {if condition="$cur_cate_info.url_prefix eq 'business_roadshow'"}class="hover"{/if}>招商路演</a> 
+				<a href="/ppt/summary_report.html"  {if condition="$cur_cate_info.url_prefix eq 'summary_report'"}class="hover"{/if}>总结汇报</a> 
+				<a href="/ppt/project_declare.html" {if condition="$cur_cate_info.url_prefix eq 'project_declare'"}class="hover"{/if}>项目申报</a> 
+				<a href="/ppt/evaluation_competition.html" {if condition="$cur_cate_info.url_prefix eq 'evaluation_competition'"}class="hover"{/if}>评比竞赛</a> 
+				<a href="/ppt/other.html">其它类型</a> 
+			</div>
+		<div class="list f-cb por ovh">
+			<ul>
+				{volist name="cases" id="case"}
+				<li class='por ovh h'>
+					<a href='/ppt/case/{$case.id}.html'>
+						<img src='{$case.cover_image}' />
+						<span class='tips f-cb'>
+							<p class='fl'>{$case.title}</p>
+							<span class='sign h fr por'>
+								<span class='in poa t-bg'></span>
+							</span>
+						</span>
+					</a>
+				</li>
+				{/volist}
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="paga">{$cases->render()}</div>
+</div>
+<div class="r-float">
+	<ul>
+		<li class="short-one" style="width: 100px;"><a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=1053153377&Site=QQ客服&Menu=yes class="short">QQ客服</a>
+		</li>
+		<!--
+		<li class="short-two"><a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=136391636&Site=QQ客服&Menu=yes class="float-two">售后服务</a></li>
+-->
+		<li class="long-one">
+			<p>咨询热线</p>
+			<div class="tel">
+				<a href='tel:15355058812'>15355058812</a>
+			</div>
+		</li>
+	</ul>
+</div>
+{include file="public/footer"}
+<script>
+	$(function () {
+		Enter($(".i-cases .list li").eq(0), "top", 0, $(".cases-list .list li").length, 800, 300)
+		$(window).scroll(function () {
+			var TOP = $(window).scrollTop();
+			if (TOP > $(window).height() * 0.6) {
+				$(".backtop").css("opacity", 1)
+			} else {
+				$(".backtop").css("opacity", 0)
+			}
+		})
+	})
+</script>

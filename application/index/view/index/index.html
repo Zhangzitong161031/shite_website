@@ -1,0 +1,284 @@
+{include file="public/header"}
+<style media="screen">
+    .icase {
+        display: none;
+    }
+
+    .icase.active {
+        display: block;
+    }
+
+    .mnav {
+        display: none;
+    }
+
+    .mnav.active {
+        display: block;
+    }
+</style>
+<div class="itopabox pc_show">
+    <div class="itopa">
+        <div class="banner">
+            <div id="flexslider" class="flexslider">
+                <ul class="slides">
+                    {volist name="pc_slides" id="slide"}
+                    <li><img src="{$slide.src}"  alt="{$slide.title}" title="{$slide.title}" /></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="itopabox mobile_show">
+    <div class="itopa">
+        <div class="banner_m">
+            <div id="flexslider2" class="flexslider">
+                <ul class="slides">
+                    {volist name="mobile_slides" id="slide"}
+                    <li><img src="{$slide.src}"  alt="{$slide.title}" title="{$slide.title}" /></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainer">
+    <div class="imain4">
+        <div class="itit">{<span><b>用实力，造就独特！</b></span>}</div>
+        <div class="icaset icaset2">
+            <a target="_blank" href="javascript:;" id="pack_tab" class="tab">石特包装</a>
+            <a target="_blank" href="javascript:;" id="brand_tab" style="float: none" class="tab hover ac">品牌设计</a>
+            <a target="_blank" href="javascript:;" id="ppt_tab" class="tab">动响演绎</a>
+        </div>
+        <div class="mnav mnav2" id="pack_tab_cates">
+            {volist name="pack_second_cases" id="pack_second_case"}
+            <a target="_blank" href="/pack/{$pack_second_case.url_prefix}.html">{$pack_second_case.catename}</a>
+            {/volist}
+        </div>
+        <div class="mnav mnav2 active" id="brand_tab_cates">
+            {volist name="brand_second_cases" id="brand_second_case"}
+            <a target="_blank" href="/{$brand_second_case.url_prefix}.html">{$brand_second_case.catename}</a>
+            {/volist}
+        </div>
+        <div class="mnav mnav2" id="ppt_tab_cates">
+            {volist name="ppt_second_cases" id="ppt_second_case"}
+            <a target="_blank" href="/ppt/{$ppt_second_case.url_prefix}.html">{$ppt_second_case.catename}</a>
+            {/volist}
+        </div>
+        <div class="mainbox">
+            <div class="icase" id="pack_tab_panel">
+                {volist name="pack_cases" id="pack_case" key="index"}
+                <div class="item {if condition=" $index%3 eq 0 "}mr0{/if}">
+                    <a target="_blank" href="/pack/case/{$pack_case.id}.html" class="img">
+                        <img src="{$pack_case.cover_image}"  alt="{$pack_case.title}" title="{$pack_case.title}" /><i></i>
+                        <div class="imgm">
+                            <p class="t"><span>客户：{$pack_case.customer_name}</span></p>
+                            <p class="m">项目：{$pack_case.title}</p>
+                        </div>
+                    </a>
+                    <a target="_blank" href="/pack/case/{$pack_case.id}.html" class="t3">{$pack_case.title}</a>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+            <div class="icase active" id="brand_tab_panel">
+                {volist name="brand_cases" id="brand_case" key="index"}
+                <div class="item {if condition=" $index%3 eq 0 "}mr0{/if}">
+                    <a target="_blank" href="/case/{$brand_case.id}.html" class="img">
+                        <img src="{$brand_case.cover_image}"  alt="{$brand_case.title}" title="{$brand_case.title}"/><i></i>
+                        <div class="imgm">
+                            <p class="t"><span>客户：{$brand_case.customer_name}</span></p>
+                            <p class="m">项目：{$brand_case.title}</p>
+                        </div>
+                    </a>
+                    <a target="_blank" href="/case/{$brand_case.id}.html" class="t3">{$brand_case.title}</a>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+            <div class="icase" id="ppt_tab_panel">
+                {volist name="ppt_cases" id="ppt_case" key="index"}
+                <div class="item {if condition=" $index%3 eq 0 "}mr0{/if}">
+                    <a target="_blank" href="/ppt/case/{$ppt_case.id}.html" class="img">
+                        <img src="{$ppt_case.cover_image}"  alt="{$ppt_case.title}" title="{$ppt_case.title}"/><i></i>
+                        <div class="imgm">
+                            <p class="t"><span>客户：{$ppt_case.customer_name}</span></p>
+                            <p class="m">项目：{$ppt_case.title}</p>
+                        </div>
+                    </a>
+                    <a target="_blank" href="/ppt/case/{$ppt_case.id}.html" class="t3">{$ppt_case.title}</a>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="icasef">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=286329829&amp;site=qq&amp;menu=yes"
+                target="_blank" class="btn1"><img src="__INDEX__/images/index/iqq.png" alt="立即咨询" />立即咨询</a>
+            <a target="_blank" href="/brand_design.html" id="see_more" class="btn2"><img src="__INDEX__/images/index/imore.png"
+                    alt="查看更多案例" />查看更多案例</a>
+        </div>
+    </div>
+    <div class="imain2">
+        <div class="itit">{<span>关于石特</span>}</div>
+        <div class="mainbox">
+            <div class="iabout intro">
+                <div class="t">
+                    <div style="text-align:center;">
+                        <b>
+                            杭州石特广告策划有限公司成立于2008年
+                            <br />是华东地区颇具影响力的品牌全案策划与设计公司，提供一站式品牌管家服务
+                            <br />新品牌建立、老品牌升级改造以及品牌年度综合设计制作落地
+                            <br />用实力，造就你的独特！构建卓越的品牌体系，实现品牌价值的最大化
+                            <br />众多行业的品牌服务经历，便捷高效的合作模式，让你省时、省力、省心、省钱。
+                        </b>
+                    </div>
+                </div>
+                <div class="m" style="font-size: 14px;text-indent: 2em">
+                    杭州石特广告策划有限公司成立于2008年,是华东地区颇具影响力的品牌全案策划与设计公司，提供一站式品牌管家服务。新品牌建立、老品牌升级改造以及品牌年度综合设计制作落地，用实力，造就你的独特！构建卓越的品牌体系，实现品牌价值的最大化。众多行业的品牌服务经历，便捷高效的合作模式，让你省时、省力、省心、省钱。
+                </div>
+                <div class="fs">
+                    <a target="_blank" href="/about.html" class="btn2">
+                        <img src="__INDEX__/images/index/imore.png"  alt="了解更多" />了解更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="imain11">
+        <div class="mainbox">
+            <div class="iservice2" style="background:url(__INDEX__/images/ihengfu.jpg) center center no-repeat;">
+                <div class="m">
+                    <a target="_blank" href="/about.html">进入服务了解更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="imain5">
+        <div class="mainbox">
+            <div class="itit2">石特资讯</div>
+            <div class="inews_box">
+                {volist name="news_list_groups" id="news_list_group" key="index"}
+                <div class="iinews{$index} inews {if condition='$index eq 3'}mr0{/if}">
+                    <div class="tit">
+                        <a target="_blank" href="/{$news_list_group.cate_url_prefix}.html" class="more">+
+                            更多动态
+                        </a>{$news_list_group.cate_name}
+                    </div>
+                    <div class="toutiao">
+                        <a target="_blank" href="/news/{$news_list_group.toutiao.id}.html" class="img">
+                            <img src="{$news_list_group.toutiao.thumbnail}" alt="{$news_list_group.toutiao.title}">
+                        </a>
+                        <a target="_blank" href="/news/{$news_list_group.toutiao.id}.html"
+                            class="t">{$news_list_group.toutiao.title}</a>
+                        <p class="m">{$news_list_group.toutiao.desc|mb_substr=0,60}<span  class="time">({$news_list_group.toutiao.time|mb_substr=0,10})</span>
+                        </p>
+                    </div>
+                    <ul>
+                        {volist name="$news_list_group.arclist" id="article"}
+                        <li>
+                            <a target="_blank" href="/news/{$article.id}.html"><b>·</b>&nbsp;{$article.title}</a>
+                            <span class="time">({$article.time|mb_substr=0,10})</span>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+                {/volist}
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="foottop">
+        <div class="mainbox">
+            <div class="t"></div>
+            <div class="t2"></div>
+            <div class="t3"></div>
+            <div class="m">通过策略性的设计，提升企业品牌与产品的销售能力！</div>
+        </div>
+    </div>
+    <div id="service_container" class="pc_show">
+        <ul class="service_groups_wrap">
+            {volist name="service_groups" id="service_group"}
+            <li class="service_groups">
+                <a target="_blank" href="{$service_group['top_link']}.html">{$service_group["top_name"]}</a>
+                <ul class="service_items_wrap">
+                    {volist name="service_group.sonitems" id="service_item"}
+                    <li class="service_items">
+                        {$service_item["service_name"]}
+                    </li>
+                    {/volist}
+                </ul>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+{include file="public/footer"}
+<script>
+    $(function () {
+        $(".ievaluate").xslider({
+            unitdisplayed: 3,
+            movelength: 1,
+            dir: "V",
+            autoscroll: 5000
+        });
+    })
+    $(function () {
+        $("#flexslider").flexslider({
+            animation: "fade",
+            slideshowSpeed: 5000,
+            animationSpeed: 1000,
+            directionNav: true,
+            touch: true
+        });
+
+        $("#flexslider2").flexslider({
+            animation: "fade",
+            slideshowSpeed: 5000,
+            animationSpeed: 1000,
+            directionNav: true,
+            touch: true
+        });
+
+    });
+    $(function () {
+        $(".ihonor").xslider({
+            unitdisplayed: 12,
+            movelength: 12,
+            dir: "V",
+            autoscroll: 5000
+        });
+    });
+    $(function () {
+        $(".tab").hover(
+            function () {
+                $(".tab").removeClass("hover");
+                $(this).addClass("hover");
+            },
+            function () {
+                $("#brand_tab").addClass("hover");
+                $(".tab").removeClass("hover");
+                if ($(".tab.hover").length == 0) {
+                    $(".ac").addClass("hover");
+                }
+            }
+        )
+        $(".tab").click(function () {
+            $(".tab").removeClass("hover");
+            $(".tab").removeClass("ac");
+            $(this).addClass("ac");
+            $(this).addClass("hover");
+            $(".mnav").removeClass("active");
+            $("#" + $(this).attr("id") + "_cates").addClass("active");
+            $(".mainbox .icase").removeClass("active");
+            $("#" + $(this).attr("id") + "_panel").addClass("active");
+            console.log($(this).attr("id"));
+            if ($(this).attr("id") == "pack_tab") {
+                $("#see_more").attr("href", "/pack");
+            } else if ($(this).attr("id") == "ppt_tab") {
+                $("#see_more").attr("href", "/ppt/case");
+            } else {
+                $("#see_more").attr("href", "/brand_design.html");
+            }
+        })
+    });
+</script>
